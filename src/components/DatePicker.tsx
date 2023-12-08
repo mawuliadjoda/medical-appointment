@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Input,
+
   Popover,
   PopoverHandler,
   PopoverContent,
@@ -16,11 +16,13 @@ export default function Example() {
     <div className="p-24">
       <Popover placement="bottom">
         <PopoverHandler>
-          <Input
-            label="Select a Date"
+          <input
+            
             onChange={() => null}
             value={date ? format(date, "PPP") : ""}
-          />
+          >
+          Select a Date
+          </input>
         </PopoverHandler>
         <PopoverContent>
           <DayPicker

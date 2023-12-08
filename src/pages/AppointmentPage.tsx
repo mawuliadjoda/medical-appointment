@@ -1,7 +1,8 @@
 import { useState } from "react";
-import DatePicker from "react-datepicker";
+
 import "react-datepicker/dist/react-datepicker.css";
-import AppointmentList from "./AppoitmentList";
+// import AppointmentList from "./AppoitmentList";
+import DatePicker  from 'react-datepicker';
 
 
 // https://reactdatepicker.com/
@@ -9,9 +10,9 @@ function AppointmentPage() {
 
   const [startDate, setStartDate] = useState(new Date());
 
-  const handleColor = (time: any) => {
-    return time.getHours() > 12 ? "text-success" : "text-error";
-  };
+  // const handleColor = (time: any) => {
+  //   return time.getHours() > 12 ? "text-success" : "text-error";
+  // };
 
 
 
