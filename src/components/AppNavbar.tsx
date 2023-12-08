@@ -9,7 +9,7 @@ import {
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
-export function MyNavbar() {
+export function AppNavbar() {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
@@ -21,25 +21,29 @@ export function MyNavbar() {
 
   const navList = (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+      
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Pages
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <a href="#" className="flex items-center">
+        {/* <a href="#" className="flex items-center">
           Account
-        </a>
+        </a> */}
+        <Link className="flex items-center" to="/dashboard">Dashboard</Link>
+      </Typography>
+
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        {/* <a href="#" className="flex items-center">
+          Pages
+        </a> */}
+        <Link className="flex items-center" to="/appointmentList">Liste RDV</Link>
       </Typography>
       <Typography
         as="li"
@@ -47,9 +51,21 @@ export function MyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        {/* <a href="#" className="flex items-center">
+          Account
+        </a> */}
+        <Link className="flex items-center" to="/patients">Patiens</Link>
+      </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="blue-gray"
+        className="p-1 font-normal"
+      >
+        {/* <a href="#" className="flex items-center">
           Blocks
-        </a>
+        </a> */}
+        <Link className="flex items-center" to="/payements">Paiements</Link>
       </Typography>
       <Typography
         as="li"
@@ -57,9 +73,7 @@ export function MyNavbar() {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Docs
-        </a>
+        <Link className="flex items-center" to="/doctors">Docteurs</Link>
       </Typography>
     </ul>
   );
