@@ -4,8 +4,10 @@ import "react-datepicker/dist/react-datepicker.css";
 // import AppointmentList from "./AppoitmentList";
 import DatePicker  from 'react-datepicker';
 
-
 // https://reactdatepicker.com/
+// https://reactdatepicker.com/
+// https://refine.dev/blog/react-date-picker/#select-time
+// https://github.com/Hacker0x01/react-datepicker/tree/main
 function AppointmentPage() {
 
   const [startDate, setStartDate] = useState(new Date());
