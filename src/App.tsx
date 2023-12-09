@@ -14,6 +14,7 @@ import { Register } from './pages/auth/Register';
 import PublicLayout from './pages/layout/PublicLayout';
 import AppointmentList from './pages/appointment/AppoitmentList';
 import PatientAppointment from './pages/appointment/PatientAppointment';
+import TodoPage from './pages/todo/TodoPage';
 
 
 // https://reactrouter.com/en/main/components/outlet
@@ -33,6 +34,7 @@ function App() {
         <Route path='/' element={<PublicLayout />}>
           <Route path="appointment" element={<AppointmentPage />} />
           <Route path="patient/appointment/:tel" element={<PatientAppointment />} />
+          <Route path="todo" element={<TodoPage />} />
         </Route>
         
         <Route path="register" element={<Register />} />
