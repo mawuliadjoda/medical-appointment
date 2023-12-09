@@ -30,8 +30,7 @@ function AppointmentPage() {
 
   const addAppointment = async (e: FormEvent) => {
     e.preventDefault();
-    
-    debugger;
+
     console.log(startDate);
     console.log(firstName);
     console.log(surName);
@@ -56,25 +55,19 @@ function AppointmentPage() {
 
   return (
     <>
-      <br /><br />
-      <p>Phone Number : {tel}</p>
-
-      <div className="">
-        Horizontally and Vertically Centered Element
-      </div>
-
+      <br />
       <Card color="transparent" shadow={true}>
 
-        <Typography variant="h4" color="blue-gray">
+        <Typography variant="h6" color="blue-gray">
           Mon rendez-vou médical
         </Typography>
-        {/* <Typography color="gray" className="mt-1 font-normal">
-          Bienvenue! Entrer vos informations de connection.
-        </Typography> w-80 */}
         <form className="mt-8 mb-2  max-w-screen-lg sm:w-96">
           <div className="mb-1 flex flex-col gap-6 mx-6">
+            <Typography variant="h6" color="blue-gray" className="mb-1">
+              <span className="flex items-center">Telephone : {tel}</span>
+            </Typography>
 
-            <Typography variant="h6" color="blue-gray" className="mb-3">
+            <Typography variant="h6" color="blue-gray" className="mb-1">
               <span className="flex items-center">Nom</span>
             </Typography>
             <Input
@@ -85,10 +78,9 @@ function AppointmentPage() {
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
-              onChange={(e) => setSurName(e.target.value)}
-            />
+              onChange={(e) => setSurName(e.target.value)}/>
 
-            <Typography variant="h6" color="blue-gray" className="-mb-3">
+            <Typography variant="h6" color="blue-gray" className="-mb-1">
               <span className="flex items-center">Prénom</span>
             </Typography>
             <Input
@@ -102,15 +94,11 @@ function AppointmentPage() {
               onChange={(e) => setFirstName(e.target.value)}
             />
 
-            <Typography variant="h6" color="blue-gray" className="mb-3">
+            <Typography variant="h6" color="blue-gray" className="mb-1">
               <span className="flex items-center">Choisir une date</span>
             </Typography>
           </div>
 
-          {/* 
-          <div className="mb-1 flex flex-col gap-6 mx-6">
-           
-          </div> */}
           <DatePicker
             selected={startDate}
             onChange={(date: any) => setStartDate(date)}
