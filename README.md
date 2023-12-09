@@ -6,6 +6,7 @@ https://www.material-tailwind.com/docs/react/guide/cra
 
 
 # Steps to Deploy React app by Using Firebase Hosting 
+# https://www.knowledgehut.com/blog/web-development/deploying-react-app-to-firebase
 npm install firebase 
 
 npm install -g firebase-tools 
