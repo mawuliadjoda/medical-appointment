@@ -12,6 +12,7 @@ import { Params, useParams } from "react-router-dom";
 import { Appointment, AppointmentStatusEnum } from "./Appointment";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
+import { sendWhatsappConfirmationMessage } from "../../whatsappService/WhatsappService";
 
 // https://reactdatepicker.com/
 // https://reactdatepicker.com/
@@ -46,6 +47,7 @@ function AppointmentPage() {
 
     try {
       const docRef = await addDoc(collection(db, "appointments"), appointment);
+      await sendWhatsappConfirmationMessage(surName, tel!, startDate);
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
@@ -78,7 +80,7 @@ function AppointmentPage() {
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
-              onChange={(e) => setSurName(e.target.value)}/>
+              onChange={(e) => setSurName(e.target.value)} />
 
             <Typography variant="h6" color="blue-gray" className="-mb-1">
               <span className="flex items-center">Prénom</span>
