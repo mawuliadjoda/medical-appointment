@@ -1,15 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, Params, useParams } from "react-router-dom";
 import { PublicNavbar } from "../../components/PublicNavbar";
 
 
 const PublicLayout = () => {
-
-
-
+  const { tel } = useParams<Params>();
   return (
     <>
       <div>
-        <PublicNavbar />
+        <PublicNavbar tel={tel!} />
         <Outlet />
       </div>
     </>

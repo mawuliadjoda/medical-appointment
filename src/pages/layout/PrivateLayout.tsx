@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import { AppNavbar } from "../../components/AppNavbar";
 import Home from "../Home";
 import { createContext, useEffect, useState } from "react";
-import { User } from "../../models/User";
+import { User } from "../auth/User";
 import { Login } from "../auth/Login";
 
 export const UserContext = createContext<User>(null);
@@ -26,6 +26,6 @@ const PrivateLayout = () => {
         <Outlet />
       </div>
     </UserContext.Provider> :
-    <Login />;
+    <Login />
 }
 export default PrivateLayout

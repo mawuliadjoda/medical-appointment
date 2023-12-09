@@ -76,7 +76,7 @@ const TodoPage = () => {
                             placeholder="Numéro téléphone"
                             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                             labelProps={{
-                                className: "before:content-none after:content-none",
+                                className: "before:content-none after:content-none"
                             }}
                             onChange={(e) => setTodo(e.target.value)}
                         />

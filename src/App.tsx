@@ -15,6 +15,7 @@ import PublicLayout from './pages/layout/PublicLayout';
 import AppointmentList from './pages/appointment/AppoitmentList';
 import PatientAppointment from './pages/appointment/PatientAppointment';
 import TodoPage from './pages/todo/TodoPage';
+import DoctorList from './pages/doctor/DoctorList';
 
 
 // https://reactrouter.com/en/main/components/outlet
@@ -32,13 +33,14 @@ function App() {
         </Route>
         
         <Route path='/' element={<PublicLayout />}>
-          <Route path="appointment" element={<AppointmentPage />} />
+          <Route path="appointment/:tel" element={<AppointmentPage />} />
           <Route path="patient/appointment/:tel" element={<PatientAppointment />} />
-          <Route path="todo" element={<TodoPage />} />
+          <Route path="doctors" element={<DoctorList />} />
+          <Route path="todo" element={<TodoPage />} />          
         </Route>
         
-        <Route path="register" element={<Register />} />
-        <Route path="login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/*" element={<NotFoundPage />} />
 
       </Routes>
