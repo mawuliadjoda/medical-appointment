@@ -49,7 +49,7 @@ function AppointmentPage() {
 
     try {
       const docRef = await addDoc(collection(db, "appointments"), appointment);
-      await sendWhatsappConfirmationMessage(surName, tel!, startDate);
+      await sendWhatsappConfirmationMessage(surName, tel!, startDate, appointment.medicalInstitution);
       console.log("Document written with ID: ", docRef.id);
     
 
