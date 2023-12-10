@@ -16,6 +16,7 @@ import AppointmentList from './pages/appointment/AppoitmentList';
 import PatientAppointment from './pages/appointment/PatientAppointment';
 import TodoPage from './pages/todo/TodoPage';
 import DoctorList from './pages/doctor/DoctorList';
+import AppointmentDetail from './pages/appointment/AppointmentDetail';
 
 
 // https://reactrouter.com/en/main/components/outlet
@@ -36,7 +37,8 @@ function App() {
           <Route path="appointment/:tel" element={<AppointmentPage />} />
           <Route path="patient/appointment/:tel" element={<PatientAppointment />} />
           <Route path="doctors" element={<DoctorList />} />
-          <Route path="todo" element={<TodoPage />} />          
+          <Route path="todo" element={<TodoPage />} />
+          <Route path="appointmentDetail" element={<AppointmentDetail />} />           
         </Route>
         
         <Route path="/register" element={<Register />} />

@@ -8,7 +8,7 @@ import {
 
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from 'react-datepicker';
-import { Params, useParams } from "react-router-dom";
+import { Params, useNavigate, useParams } from "react-router-dom";
 import { Appointment, AppointmentStatusEnum } from "./Appointment";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
@@ -23,6 +23,8 @@ function AppointmentPage() {
   const [startDate, setStartDate] = useState(new Date());
   const [firstName, setFirstName] = useState("");
   const [surName, setSurName] = useState("");
+
+  const navigate = useNavigate();
 
   // const handleColor = (time: any) => {
   //   return time.getHours() > 12 ? "text-success" : "text-error";
@@ -41,7 +43,7 @@ function AppointmentPage() {
       patientFirsName: firstName,
       patientPhoneNumber: tel!,
       appointmentDate: startDate,
-      medicalInstitution: "CHU Campus",
+      medicalInstitution: import.meta.env.VITE_MEDICAL_INSTITUTION,
       status: AppointmentStatusEnum.CONFIRMED
     }
 
@@ -49,6 +51,15 @@ function AppointmentPage() {
       const docRef = await addDoc(collection(db, "appointments"), appointment);
       await sendWhatsappConfirmationMessage(surName, tel!, startDate);
       console.log("Document written with ID: ", docRef.id);
+    
+
+      // const navigateProps: NavigateProps = {
+      //   to: '/appointmentDetail',
+      //   state: appointment
+      // }
+      navigate( '/appointmentDetail', { state: appointment })
+      // Navigate(navigateProps)
+
     } catch (e) {
       console.error("Error adding document: ", e);
     }
